@@ -1,0 +1,119 @@
+// NORMALIZE
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-style: normal;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 18px;
+  }
+
+// Styles
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.close {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    background: #000;
+    height: 8px;
+    margin-top: -4px;
+    width: 200%;
+    left: -50%;
+  }
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+.round {
+    overflow: hidden;
+    border-radius: 50%;
+    border: 8px black solid
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+}
+
+.cell {
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    background-color: gray;
+    cursor: pointer;
+}
+
+#game__restart {
+  box-shadow: 4px 2px 6px 1px black;
+  padding: 6px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+// toggle
+.switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.rounded {
+  border-radius: 34px;
+}
+
+.slider.rounded:before {
+  border-radius: 50%;
+}
